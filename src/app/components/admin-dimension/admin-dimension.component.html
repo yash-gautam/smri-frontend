@@ -1,0 +1,83 @@
+<div >
+    <div class="titleArea">
+      <div class="title mb-2">{{model}}</div>
+      <div class="instructions">All the dimensional data available under SIRI model is provided below:
+
+
+        <button class="addDimension" (click)="add()" *ngIf="addButton" >Add Dimension
+          <i class='bx bx-plus' style=""></i>
+        </button>
+
+        <button class="addDimension" (click)="save()" *ngIf="saveButton"  >Save Dimension
+          <i class='bx bx-save' style=""></i>
+        </button>
+
+        <select name="visitedCompanies" id="visitedCompanies">
+          <option value="Companies Visited">Companies Visited</option>
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <table class="table table-bordered mt-4 dimensionTable" style="width: 94%; margin-left: auto; margin-right: auto;">
+      <thead>
+        <tr>
+
+          <th scope="col" rowspan="2" class="tableHeading">Dimension Title</th>
+          <th scope="col" rowspan="2" class="tableHeading">Dimension Description</th>
+          <th scope="col" rowspan="2" class="tableHeading">Dimension Weight</th>
+          <th scope="col" rowspan="2" class="tableHeading">Dimension Cutoff</th>
+          <th scope="col" colspan="6" class="tableHeading">Rating</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+      </thead>
+      <tbody *ngIf="show" >
+
+        <tr class="alert alert-primary text-center" style="align-items: center;text-align:center"  >
+          <th><input class="adminPageInput"  style="border:2px solid black;border-radius:5px" [(ngModel)]="name"   type="text"  value="Name" ></th>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="desc" type="text" value="Desc" ></td>
+          <td><input class="adminPageInput"  style="border:2px solid black;border-radius:5px" [(ngModel)]="weight"  type="number" value="0.33"></td>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="cutOff"  type="number" value="2"></td>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="Rating[0]"  type="text" value="0-desc"></td>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="Rating[1]"  type="text" value="1-desc"></td>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="Rating[2]"  type="text" value="2-desc"></td>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="Rating[3]"  type="text" value="3-desc"></td>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="Rating[4]"  type="text" value="4-desc"></td>
+          <td><input class="adminPageInput" style="border:2px solid black;border-radius:5px" [(ngModel)]="Rating[5]"  type="text" value="5-desc"></td>
+
+        </tr>
+
+      </tbody>
+
+      <tbody>
+
+        <tr *ngFor="let i of dim ;let index = index" >
+
+          <th>{{i.name}}</th>
+          <td>{{i.description}}</td>
+          <td>{{i.weight}}</td>
+          <td>{{i.cutOff}}</td>
+          <td>{{i.Rating[0]}}</td>
+          <td>{{i.Rating[1]}}</td>
+          <td>{{i.Rating[2]}}</td>
+          <td>{{i.Rating[3]}}</td>
+          <td>{{i.Rating[4]}}</td>
+          <td>{{i.Rating[5]}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+    <!-- <div class="paginationControl" style="float: right; margin-right: 3%; margin-top: .5%;">
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div> -->
+  </div>

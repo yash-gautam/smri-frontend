@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Merienda+One&family=Merienda:wght@400;700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Rakkas&family=Reggae+One&family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* font-family: 'Amita', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Merienda One', cursive;
+font-family: 'Philosopher', sans-serif;
+font-family: 'Rakkas', cursive;
+font-family: 'Reggae One', cursive;
+font-family: 'Suez One', serif;
+
+
+font-family: 'Lora', serif;
+font-family: 'Merriweather', serif;
+*/
+
+body{
+  margin: 0;
+  padding: 0rem 0rem 0rem 0rem;
+  /* overflow: hidden; */
+
+}
+
+:root{
+  --main-color: #003153;
+  --color-dark: #1D2231;
+  --text-grey: #8390A2;
+  --primaryColor:#FF4F5B;
+  --greenColor: #03aa32;
+}
+
+*{
+  font-family: 'Open Sans', sans-serif !important;
+  margin: 0; padding: 0;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+  outline: none !important;
+  transition: all .2s cubic-bezier(.37, 1.14, .26, 1.24) !important;
+}
+
+*::selection{
+  background: var(--red);
+  color: #fff;
+}
+
+html{
+  overflow-x: hidden;
+}

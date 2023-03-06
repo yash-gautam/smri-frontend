@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+@media (max-width:460px){
+
+
+  .card-body{
+    width: 300px !important;
+
+  }
+
+  .card{
+    border:2px solid black;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    height: fit-content !important;
+  }
+
+
+  div>img{
+    height: 20px !important;
+    width: 50px !important;
+
+  }
+
+
+
+
+
+
+
+
+
+  .h2{
+    font-size: 28px !important;
+    text-align: center !important;
+    width:95% !important ;
+
+    margin-left: auto !important;
+  }
+
+
+
+  .row{
+
+    display: inline !important;
+    margin-top: 10px !important;
+  }
+
+  .img{
+    width: 10px !important;
+    margin-top: 10px !important;
+    height: 10% !important;
+    display: inline-flex !important;
+    position: absolute;
+    margin-left: 0px !important;
+
+  }
+
+
+  .img>img{
+    height: 200px !important;
+    margin-top: 40px !important;
+    margin-left: 0px !important;
+
+  }
+
+  .card-text{
+    font-size: medium !important;
+    width: 350px !important;
+    margin-left: 5px;
+  }
+
+  .card-body>h5{
+    font-size: 22px !important;
+    margin-left: 5px;
+  }
+
+  .img2{
+    display: none;
+  }
+
+  .row>div>button{
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+
+
+  }

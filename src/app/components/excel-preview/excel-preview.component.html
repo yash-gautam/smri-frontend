@@ -1,0 +1,19 @@
+<input type="file" (change)="onFileChange($event)" multiple="false" />
+
+<!-- class = sjs-table, ExcelTable2007 -->
+<table id="TheTable" class="ExcelTable2007 table">
+  <thead #header>
+    <tr>
+      <th *ngFor="let headValue of headData">
+        {{headValue}}
+      </th>
+    </tr>
+  </thead>
+  <tbody #container>
+    <tr *ngFor="let row of data">
+      <td *ngFor="let val of headData; let i =index">
+        {{row[i] || ' '}}
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,208 @@
+
+
+
+<!-- home section starts -->
+<!-- <section class="home" id="home"> -->
+  <section class="home" >
+  <div class="content"  style="margin-top:15px;">
+
+      <p class="h2" style="margin-top:105px;font-weight:bolder;
+      margin-left:80px;width:50%;text-align:left;font-family: 'Open Sans', sans-serif; font-size:2.7em;margin-bottom:25px">Register now to assess Smart Manufacturing Readiness of your organisation.</p>
+
+        <!-- <h3>Bliss on a Plate</h3> -->
+      <a  href="#"><button class="btn assessment p-3" style="float:left;margin-left:80px;font-size:1.5em;color:whitesmoke
+        " (click)="toggleModal()"
+        data-toggle="modal" data-target="#exampleModalCenter2"
+        >Take Self Assessment</button></a>
+
+  </div>
+
+  <!-- <div class="shape">
+
+  </div> -->
+</section>
+<!-- home section ends -->
+
+
+
+
+
+<!-- ABOUT SECTION -->
+<div class="container" style="overflow:hidden;">
+  <div class="card  border-0" style="max-width: 100%;height: 540px; margin-top:145px;margin-bottom:70px" >
+    <div class="row " >
+
+
+      <div class="col-md-1 col-xs-1 img mt-5" style="width: 38px;" >
+        <img  class="mt-4" src="../../../assets/smri_vertical.png" height="300"  alt="">
+      </div>
+
+      <div class="col-md-6 col-xs-4 mt-4 ">
+        <div class="card-body "  style="width: 700px;">
+
+          <h5 style="display: inline;" class="card-title" style="font-weight:bolder;font-size: 48px;color:black">Smart Manufacturing <br>
+
+            Readiness Index  <span style="color: #EC1C24 ;">(SMRI) </span></h5>
+            <br>
+          <p class="card-text" style="color: #000000; font-size:28px">Our aim is to help companies identify focus <br> areas  of
+            manufacturing transformation that <br> will  generate greater
+            efficiency and <br> effectiveness  in the entire value chain of the
+            organization.
+            </p>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-md-4 col-xs-0 float-right" >
+        <img src="../../../assets/smri.png" class="img2 rounded-start ml-5 mt-5" height="400" width="550" alt="...">
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SIGNUP Form -->
+
+
+
+
+
+<!-- Login Page -->
+
+
+
+
+<div  class="modal fade orgModal" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+style="overflow: hidden;" >
+  <div class="modal-dialog modal-dialog-centered modal-lg" style="overflow: hidden;"[ngStyle]="{'display': disp}" >
+    <div class="modal-content" style="border-radius: 10px;">
+      <!-- <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+      <div class="modal-body ms-2 p-4">
+        <p class="orgModalTitle" style="  text-decoration: underline !important; font-weight:bold"><u>Enter Details</u>
+        </p>
+
+        <span><mat-error *ngIf="!Organisationform.valid && disp" style="text-align:center">
+          Please Fill the Details
+        </mat-error></span>
+
+        <form  [formGroup]="Organisationform">
+        <div class="form-group row mt-3">
+          <label for="staticEmail" class="col-sm col-form-label">Choose your Industry Sector</label>
+          <div class="col-sm-8">
+
+            <select class="custom-select" formControlName="industrySector"  >
+              <option id="opt"[ngValue]="null"  selected>Select Industry Sector</option>
+              <option id="opt" *ngFor="let c of IndustrySectors" [ngValue]="c" >{{c}}</option>
+
+            </select>
+            <mat-error *ngIf="industrySector?.errors?.['required'] && Organisationform.controls['industrySector'].touched ">
+              Industry Sector is required
+            </mat-error>
+          </div>
+        </div>
+
+        <div class="form-group row mt-2">
+          <label for="staticEmail" class="col-sm col-form-label">Name of your Organization</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="OrgName" class="form-control" id="formGroupExampleInput" placeholder="Enter your organization name">
+            <mat-error *ngIf="OrgName?.errors?.['required']  && Organisationform.controls['OrgName'].touched">
+              Organisation Name is required
+            </mat-error>
+          </div>
+        </div>
+
+        <div class="form-group row mt-2">
+          <label for="staticEmail" class="col-sm col-form-label">Annual revenue of your organisation(in crores)</label>
+          <div class="col-sm-8">
+            <select class="custom-select"  formControlName="revenue" >
+              <option id="opt" [ngValue]="null" selected>Select Revenue Range</option>
+              <option id="opt"  value="0-10">0-10</option>
+              <option id="opt" value="11-50">11-50</option>
+              <option id="opt" value="51-250">51-250</option>
+              <option id="opt" value="251 and above">251 and above</option>
+            </select>
+            <mat-error *ngIf="revenue?.errors?.['required'] && Organisationform.controls['revenue'].touched ">
+              Organisation Revenue is required
+            </mat-error>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group row mt-2">
+          <label for="staticEmail" class="col-sm col-form-label">Number of Employees</label>
+          <div class="col-sm-8">
+            <select  formControlName="employeeCount" class="custom-select" >
+              <option [ngValue]="null" selected disabled>Select Employee Count Range</option>
+
+              <option  value="0-10">0-10</option>
+              <option id="opt" value="11-50">11-50</option>
+              <option id="opt" value="51-150">51-150</option>
+              <option id="opt" value="151 and above">151 and above</option>
+            </select>
+            <mat-error *ngIf="employeeCount?.errors?.['required'] && Organisationform.controls['employeeCount'].touched ">
+              Employee Count is required
+            </mat-error>
+          </div>
+        </div>
+
+
+
+        <div class="form-group row">
+          <div class="col mt-3">
+            <button  type="button" class="btn btn-primary" style="border: none; outline: none; margin-left: 39%; "
+             (click)=proceed()
+             data-dismiss="modal"
+
+             >Proceed to assessment</button>
+
+          </div>
+
+        </div>
+
+
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SIGNUP MODEL -->
+
+
+
+
+
+
+
+
+

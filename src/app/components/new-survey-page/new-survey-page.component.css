@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+input[type='radio']{
+
+  height: 22px;
+  width: 22px;
+  background-color: #eee;
+  border-radius: 40%;
+
+}
+
+.form-check-input:focus{
+  box-shadow: none;
+
+}
+
+input[type='radio']:checked{
+border:0px solid red;
+background-color: red;
+
+}
+
+@media screen and (max-width: 450px) {
+  .cls {
+
+    right:0%;
+
+  }
+
+  .btn{
+    margin:0px 0px 65px 22% !important
+  }
+
+  div.div{
+    margin-left: 22% !important;
+    font-weight: bolder;
+  }
+
+  .options{
+    font-size: 15px !important;
+
+  }
+
+
+}

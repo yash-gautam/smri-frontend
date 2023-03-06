@@ -1,0 +1,187 @@
+.analysisHeading{
+  background: #242d82;
+}
+
+.analysisHeading .col{
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  padding: 1.7% 1% 1.2% 1%;
+  text-align: center;
+}
+
+
+
+
+
+
+.downloadBox{
+  background: #02051eeb;
+}
+
+.downloadBox .col{
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: .62rem;
+  text-align: right;
+  padding: .3% 1%;
+  margin: auto;
+}
+
+.downloadBox .pdfBtn{
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  text-align: right;
+}
+
+.downloadBox .pdfBtn .pdfImage{
+  width: 5.2%;
+}
+
+
+
+
+
+
+
+
+.overviewBox{
+
+}
+
+.overviewBox .col{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  padding: 3% 5%;
+}
+
+.overviewBox .overviewHeading{
+  color: #313892;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.overviewBox .overviewSubHeading{
+  font-weight: 350;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.overviewBox .cardRow{
+  /* background: red; */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.overviewBox .cardRow .operandCard{
+  background: #b3d9fd48;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.overviewBox .cardRow .operandCard .cardHead{
+  background: #b3daff41;
+  border-radius: 10px;
+  padding: .6% 0;
+}
+
+.overviewBox .cardRow .operandCard .cardHead .col{
+  color: #3d439a;
+  font-weight: 500 !important;
+  font-size: 1.1rem;
+}
+
+.overviewBox .cardRow .cardBody{
+  padding: 17% 3%;
+}
+
+.overviewBox .cardRow .operandCard .cardBody .col{
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #313892;
+}
+
+.overviewBox .cardRow .operatorCard{
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #313892;
+}
+
+.overviewBox .cardRow .resultCard{
+  background: #aaf7a93a;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.overviewBox .cardRow .resultCard .cardHead{
+  background: #9ff99e3a;
+  border-radius: 10px;
+  padding: .6% 0;
+}
+
+.overviewBox .cardRow .resultCard .cardHead .col{
+  color: #398b2a;
+  font-weight: 500 !important;
+  font-size: 1.1rem;
+}
+
+.overviewBox .cardRow .resultCard .cardBody .col{
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #367f29;
+}
+
+
+
+
+
+
+
+
+.graphBox{
+
+}
+
+.graphBox .col{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  padding: 3% 5%;
+}
+
+.graphBox .graphHeading{
+  color: #313892;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.graphBox .heading{
+  color: #313892;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.graphBox .subHeading{
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+
+.graphBox .bodyGraph{
+  /* height: 10%; */
+  display: block;
+  width: 80%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+}
+
+/* .graphBox .bodyGraph canvas.myChart{
+  margin-left: auto;
+  margin-right: auto;
+} */

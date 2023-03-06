@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap");
+* {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+
+}
+
+.newNav {
+  font-size: 2rem;
+  padding: 10px 30px;
+  background: #000000 !important;
+  height: fit-content;
+}
+
+.navDiv ul li {
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.navDiv .loginButton {
+  background: #e92f2f;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 32px;
+  font-size: 0.86rem;
+  /* margin-top: auto; */
+  /* margin-bottom: auto; */
+  /* font-weight: 700; */
+  margin-left: 10px;
+}
+
+img.modalBanner {
+  width: 8% !important;
+}
+
+.nav-link {
+  color: white;
+}
+
+.ulc {
+  /* background: red; */
+}
+
+.ulc li {
+  font-size: 0.86rem;
+  vertical-align: middle !important;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* MODAL CSS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* .loginModal {
+  border-radius: 20rem !important;
+} */
+
+.loginModal img {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.loginModal .modal-body {
+  padding: 0;
+}
+.loginModal .modal-dialog {
+  max-width: 1050px;
+  z-index: 10000;
+  margin-top: 4.2%;
+  margin-left: 17.2%;
+}
+.loginModal .formWrap {
+  margin-top: 3%;
+  padding: 35px 45px;
+  text-align: center;
+}
+.loginModal h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.loginModal hr {
+  width: 100%;
+  border: 4px solid #e92f2f;
+  height: 2px;
+  background: #e92f2f;
+  border: none;
+}
+.loginModal form {
+  margin-top: 35px;
+}
+.loginModal input {
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+.loginModal input:focus {
+  outline: #e92f2f;
+  border-color: #e92f2f;
+}
+.loginModal .submit {
+  background: #e92f2f;
+  color: #fff;
+  border: none;
+  margin-top: 8%;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-weight: 800;
+  font-size: 0.95rem;
+  align-items: center;
+  width: 75%;
+}
+.loginModal h6 a {
+  color: #e92f2f;
+  font-weight: normal;
+}
+.loginModal h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 45px;
+}
+.loginModal p {
+  margin-bottom: 0;
+}
+.loginModal p a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  border-radius: 50px;
+  border: 1px solid #e92f2f;
+  color: #e92f2f;
+  margin-right: 10px;
+}
+
+.signinButton {
+  background: #e92f2f;
+  border: 2px solid #d31f1f;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px 23px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: white;
+  border-right: none;
+}
+.signupButton {
+  background: white;
+  border: 2px solid rgb(184, 182, 182);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 5px 23px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgb(118, 113, 113);
+  border-left: none;
+}
+
+.signinButton1 {
+  background: white;
+  border: 2px solid rgb(184, 182, 182);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px 23px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgb(118, 113, 113);
+  border-right: none;
+}
+.signupButton1 {
+  background: #e92f2f;
+  border: 2px solid #d31f1f;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 5px 23px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: white;
+  border-left: none;
+}
+
+.emailField {
+  background: url(../../../assets/email_icon.png) no-repeat right;
+  padding-right: 25px !important;
+  background-size: 20px;
+  border-radius: 8px;
+}
+
+.emailField1 {
+  padding-right: 25px !important;
+  background-size: 20px;
+  border-radius: 8px;
+}
+
+.passwordField {
+  background-size: 20px;
+  border-radius: 8px;
+}
+
+.forgotPw {
+  color: #e92f2f;
+  font-size: 0.8rem;
+  float: right;
+  background: none;
+  border: none;
+}
+
+h1.hrcontent {
+  overflow: hidden;
+  text-align: center;
+  margin-top: 4%;
+  text-transform: none !important;
+  font-size: 0.85rem !important;
+  color: rgb(108, 102, 102);
+}
+
+h1.hrcontent::before,
+h1.hrcontent::after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+h1.hrcontent:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+h1.hrcontent:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.loginModal .getNewCode {
+  background: white;
+  border: 2px solid #e92f2f;
+  color: #e92f2f;
+  border-radius: 20px;
+  text-transform: none !important;
+  font-weight: 800;
+  font-size: 0.95rem;
+  width: 75%;
+}
+
+.createAccLink {
+  transform: translateY(-1px);
+  color: #e92f2f;
+  background: none;
+  border: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  * {
+    font-size: 82%;
+  }
+
+  .loginButton {
+    font-size: 82% !important;
+    padding: 4px 30px !important;
+  }
+
+  .navImg1 {
+    /* background: red; */
+    width: 63% !important;
+  }
+
+  .navImg2 {
+    width: 10.7% !important;
+  }
+}
+
+@media (max-width: 1125px) {
+  * {
+    font-size: 72%;
+  }
+
+  .loginButton {
+    font-size: 74% !important;
+    padding: 4px 30px !important;
+  }
+
+  .navImg1 {
+    /* background: red; */
+    width: 63% !important;
+  }
+
+  .navImg2 {
+    width: 10.7% !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  * {
+    font-size: 72%;
+  }
+  .loginButton {
+    font-size: 72% !important;
+    padding: 3px 26px !important;
+  }
+
+  .navImg1 {
+    /* background: red; */
+    width: 61% !important;
+  }
+  .navImg2 {
+    width: 10.3% !important;
+  }
+}
+
+@media (max-width: 1018px) {
+  * {
+    font-size: 70%;
+  }
+  .loginButton {
+    font-size: 70% !important;
+    padding: 2.6px 23px !important;
+  }
+
+  .navImg1 {
+    /* background: red; */
+    width: 59% !important;
+  }
+  .navImg2 {
+    width: 10% !important;
+  }
+
+  @media screen and (max-width: 450px) {
+
+    .row>div>img{
+      border: 2px solid green;
+      height: 100px !important;
+      width: 100px !important;
+      display: none !important;
+
+    }
+
+    .modal{
+      font-size:270px !important;
+    }
+
+  }
+}
+
+
+
+
+
+.profileIcon{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userInfo{
+  color: white;
+  font-weight: 500;
+  font-size: .9rem;
+}

@@ -1,0 +1,264 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark newNav">
+  <div class="container-fluid" style="margin-left: 1%;">
+    <a class="navbar-brand" href="#"><img class="navImg1" src="../../../../assets/app_logo.png" style="height: 60%; width: 65%; margin-top: auto; margin-bottom: auto;" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="float:right;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navDiv justify-content-end" style=""    id="navbarSupportedContent" >
+      <!-- margin-left: 245px; -->
+      <ul class="navbar-nav ulc mb-2">
+        <li class="nav-item me-4">
+          <!-- style="margin-left:50px"  -->
+          <a  class="nav-link active" aria-current="page" href="#" >Home</a>
+        </li>
+        <li class="nav-item me-4">
+          <a class="nav-link active" href="#">Services</a>
+        </li>
+        <li class="nav-item me-4">
+          <a class="nav-link active" href="#" >Repository</a>
+        </li>
+        <li class="nav-item me-4">
+          <a class="nav-link active" href="#" >Events</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link active" href="#" >Contact Us</a>
+        </li>
+
+        <li class="nav-item  me-3 "    >
+
+          <!-- UNCOMMENT BELOW -->
+
+          <ng-template #loginButton class="nav-link active"  >
+
+            <button class="loginButton me-5" style="font-size: 24px;" data-toggle="modal" data-target="#exampleModalCenter1" (click)="toggleModal()">Login</button>
+            </ng-template>
+
+
+
+            <!-- DELETE NG CONTAINER BELOW -->
+            <!-- <ng-container  #loginButton class="nav-item active ">
+              <button class="loginButton"  (click)="logout()" style="font-size: 24px;" data-toggle="modal" data-target="#exampleModalCenter1">Login</button>
+            </ng-container> -->
+
+
+
+
+        </li>
+      </ul>
+
+      <ng-container *ngIf="authService.currentUser$ | async as user ;else loginButton">
+
+
+
+        <div>
+          <div  class="me-3 mt-2" style="text-align: center;">
+            <img src="../../../assets/user4.png" class="profileIcon" alt="">
+            <div class="row">
+              <p class="userInfo" data-toggle="modal" data-target="#confirm-modal" style="text-transform: capitalize;cursor:pointer;">{{user.displayName}}</p>
+            </div>
+          </div>
+
+          <!-- <div class="dropdown">
+            <img src="../../../assets/user4.png" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" height="35px" alt="">
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div> -->
+
+          <!-- <p><button  class="loginButton " style="font-size: 10px;width:25px"  (click)="logout()">{{user.displayName}}</button></p> -->
+        </div>
+
+
+
+        </ng-container>
+
+
+      <img class="navImg2" src="../../../../assets/bmu_logo.png" style="height: 5%; width: 11%; margin-top: auto; margin-bottom: auto; float:right" alt="BMU_logo">
+
+      <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="modal" id="confirm-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Logout Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you Sure to LogOut ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="logout()">Yes</button>
+        <button type="button" class="btn btn-secondary" >No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SIGNUP Form -->
+
+<div class="modal fade loginModal" style="border:2px s" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" >
+    <div class="modal-content" style="border-radius: 20px;" >
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 p-0"  >
+            <img  src="../../../assets/Rectangle 2030.png"
+            height="600"   alt="">
+        </div>
+        <div class="col-md-6 p-0">
+          <div class="formWrap">
+              <button data-toggle="modal" data-target="#exampleModalCenter1" class="signinButton1" data-dismiss="modal">Sign in</button> <button class="signupButton1">Sign up</button>
+              <hr>
+              <form [formGroup]="signUpForm">
+
+                <input type="text" class="name" placeholder="Name" formControlName="signUpname">
+                <mat-error *ngIf="signUpname?.errors?.['required'] && signUpForm.controls['signUpname'].touched ">
+                  Name is required
+                </mat-error>
+
+                <input type = "text" class="emailField1" placeholder="Email" formControlName="signUpemail">
+
+                <mat-error *ngIf="signUpemail?.errors?.['required'] && signUpForm.controls['signUpemail'].touched">
+                  Email address is required
+                </mat-error>
+                <mat-error *ngIf="signUpemail?.errors?.['email']">
+                  Please enter a valid email address
+                </mat-error>
+
+
+                <input type = "password" class="passwordField" placeholder="Create password" formControlName="signUppassword">
+                <mat-error *ngIf="signUppassword?.errors?.['required'] && signUpForm.controls['signUppassword'].touched">
+                  Password is required
+                </mat-error>
+                <input type = "password" class="passwordField" placeholder="Confirm password" formControlName="signUpconfirmPassword">
+                <mat-error *ngIf="signUpconfirmPassword?.errors?.['required'] && signUpForm.controls['signUpconfirmPassword'].touched  ">
+                  Confirm Password is required
+                </mat-error>
+              <mat-error *ngIf="signUpconfirmPassword?.errors?.['passwordsDontMatch']">
+                  Passwords should match
+              </mat-error>
+                <input class="submit" type = "submit" (click)="signUpsubmit()" value="Sign Up">
+                <div style="margin-top: 3%;">
+                  <span>Already have an account? &nbsp;<button data-toggle="modal" data-target="#exampleModalCenter1" data-dismiss="modal" class="createAccLink">Sign in</button></span>
+                </div>
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Login Page -->
+<div class="modal fade loginModal" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" >
+    <div class="modal-content" style="border-radius: 20px;" >
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 p-0"  >
+            <img  src="../../../assets/Rectangle 2030.png"
+            height="600"   alt="">
+        </div>
+        <div class="col-md-6 p-0">
+          <div class="formWrap">
+              <button class="signinButton" style="font-family: 'Open Sans', sans-serif;">Sign in</button> <button data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal" class="signupButton">Sign up</button>
+              <!-- <h1>Log in</h1> -->
+              <!-- <p><small>Get more ideas & inspiration in your inbox</small></p> -->
+              <hr>
+              <form [formGroup]="loginForm">
+                <input type = "text" class="emailField" placeholder="Email" formControlName="email">
+                <mat-error *ngIf="email?.errors?.['required'] && loginForm.controls['email'].touched">Email address is required</mat-error>
+                <mat-error *ngIf="email?.errors?.['email']">Please enter a valid email address</mat-error>
+
+
+                <input type = "password" class="passwordField" placeholder="Password" formControlName="password">
+                <mat-error *ngIf="password?.errors?.['required'] && loginForm.controls['password'].touched">Password  is required</mat-error>
+
+                <button class="forgotPw">Forgot Password?</button>
+                <mat-error *ngIf="password?.errors?.['required']">
+                  Password is required
+                </mat-error>
+                <input class="submit" type = "submit" data-dismiss="modal" aria-label="Close" style="margin-left: 25px;" value="LOGIN" (click)="submit()">
+                <h1 class="hrcontent">or</h1>
+                 <div style="margin-top: 3%;">
+                  <span>Not registered yet? &nbsp;<button data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal" class="createAccLink">Create an Account</button></span>
+                </div>
+            </form>
+
+
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal fade loginModal" style="height:720px;"  id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered" role="document" >
+    <div class="modal-content" style="border-radius: 10px;">
+
+      <div class="modal-body">
+        <div class="row">
+
+          <div class="col-md-6 p-0"  >
+            <img  src="../../../assets/Rectangle 2030.png"
+            height="600"   alt="">
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+<!-- ADMIN MODAL -->
+
+
+
+
+
+
+
+
+
+

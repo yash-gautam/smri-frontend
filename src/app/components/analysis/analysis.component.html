@@ -1,0 +1,493 @@
+<div class = "supTitle" style="background: #f1fceca7;">
+
+  <div class="container-fluid">
+    <div class = "row">
+
+      <div class = "col-10">
+        <div class = "row">
+          <div class = "col">
+            <div class = "row titleheading mt-2" style="margin-left: 2rem;">
+              <img src="../../../../assets/LogoSMI.png" style="width: 30%; transform: translateY(10px)" alt="">
+              <!-- SMRI -->
+            </div>
+            <div class = "row titleheading mt-3" style="margin-left: 5rem;">
+              <!-- An initiative of BML Munjal University -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class = "col">
+        <img src="https://indiaeducationdiary.in/wp-content/uploads/2020/05/image1.png" style="width: 87%;" alt="logo"
+        >
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<app-navbar></app-navbar>
+
+
+<div class="selectionArea" *ngIf="selectModel">
+
+
+
+
+  <h4 class="intructModel">Please select a model: </h4>
+
+  <input class="inputBox1" type="search" list="degreeList" placeholder="Select Model" (change)="modelEntry($event)">
+  <datalist class="inputList" id="degreeList">
+    <option value="SIRI" >
+    <option value="Impuls">
+    <option value="MPI">
+  </datalist>
+
+  <button class="loadButton" (click)="getData()">Load Analysis</button>
+
+</div>
+
+<div *ngIf="showAnimation">
+  <div class="loader">Analyzing Results...</div>
+</div>
+
+<div *ngIf="showAnalysis">
+
+
+
+  <div class = "supTitle" style="background: #f1fceca7;">
+    <div class="container-fluid">
+      <div class = "row">
+
+        <div class = "col-10">
+          <div class = "row">
+            <div class = "col">
+              <div class = "row titleheading mt-2" style="margin-left: 2rem;">
+                <img src="../../../../assets/LogoSMI.png" style="width: 30%; transform: translateY(10px)" alt="">
+                <!-- SMRI -->
+              </div>
+              <div class = "row titleheading mt-3" style="margin-left: 5rem;">
+                <!-- An initiative of BML Munjal University -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class = "col">
+          <img src="https://indiaeducationdiary.in/wp-content/uploads/2020/05/image1.png" style="width: 87%;" alt="logo"
+          >
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <app-navbar></app-navbar>
+
+  <!-- <button (click)="getData()">Click</button> -->
+
+  <!-- <br> <br> -->
+
+  <!-- <button (click)="testVar()">Click New</button> -->
+
+  <div id="page" class="container-fluid entire">
+
+  <div class="nobreak">
+      <!-- FIRST ROW -->
+      <div class="row">
+
+        <!-- TOP-LEFT DIV -->
+        <div  class="col-lg-6 col-12">
+
+          <div class="row titleDiv">
+            <div class="row align-items-end ms-1">
+
+              <div class="col-lg-8 col-md-6 col-8">
+                <div class="row content">
+                  SMI Analysis
+                </div>
+                <div class="row subTitle">
+                  A snapshot of multidimensional smart manufacturing growth in India
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 col-4">
+                <div id="element-to-hide" data-html2canvas-ignore="true"  style="position: relative;">
+                  <button class="downloadBtn" (click)="showList()" title="Save Results in .xlsx format">
+                    <i class='bx bxs-download'></i>
+                    Download Data
+                  </button>
+
+                  <div *ngIf="showDownloadList" class="downloadList">
+                    <div class="row">
+                      <div class="col-12">
+                        <button (click)="downloadPDF()">
+                          <i class="fa-regular fa-file-pdf" style="color: red; font-weight: 600;"></i>
+                          &nbsp; Download PDF
+                        </button>
+                      </div>
+                      <div class="col-12">
+                        <button (click)="downloadExcelNew()">
+                        <div style="transform: translateX(-2%);">
+                          <i class="las la-file-excel" style="color: green; font-weight: 700; font-size: 1.1rem;"></i>
+                          &nbsp;
+                          <span>Download Excel</span>
+                        </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row leftMid ms-2">
+            <div class="heading2">
+              Overview
+            </div>
+            <span class="subTitle">
+              SMI Headcount Ratio, Intensity and MPI
+            </span>
+
+            <div class="row leftMidRow">
+
+              <div class="col">
+
+                <div class="row boxOne">
+                  <div class="title">
+                    Headcount Ratio (H)
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="boxValue">
+                    <!-- 25.01% -->
+                    {{headcountRatio | number:'1.2-2'}} %
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-1" style="transform: translateY(40%);">
+                <div class="operation">
+                  x
+                </div>
+              </div>
+
+              <div class="col">
+
+                <div class="row boxTwo">
+                  <div class="title">
+                    Intensity (A)
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="boxValue">
+                    <!-- 47.13% -->
+                    {{intensity | number:'1.2-2'}} %
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-1" style="transform: translateY(40%);">
+                <div class="operation">
+                  =
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="row boxThree">
+                  <div class="title">
+                    MPI (HxA)
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="boxValueThree">
+                    <!-- 0.118 -->
+                    {{adjustedHeadcountRatio | number:'1.2-2'}}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- TOP RIGHT DIV -->
+        <div class="col-lg-6 col-12 topRightDiv">
+          <div class="row heading">
+            Results
+          </div>
+          <div class="row greyBox me-2">
+            <span class="span1">
+              SMI: Uncensored Headcount Ratio
+            </span>
+
+            <span class="span2">
+              Percentage of total population who are deprived in each dimension
+            </span>
+          </div>
+
+          <div class="row me-2">
+            <canvas id="myChart" class="myChart"></canvas>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- SECOND ROW -->
+      <div class="row mt-4 pb-4">
+
+        <div class="col-lg-6 col-12 rowTwo">
+
+          <div class="row greyBox ms-2">
+            <span class="span1">
+              SMI: Dimension-Wise Contribution to MPI
+            </span>
+
+            <span class="span2">
+              Percentage contribution of each dimension to the MPI score
+            </span>
+          </div>
+
+          <div class="row ms-2">
+            <canvas id="myChart2" class="myChart"></canvas>
+          </div>
+
+        </div>
+
+
+        <div class="col-lg-6 col-12">
+
+          <div class="row greyBox me-2 ms-3">
+            <span class="span1">
+              SMI: Censored Headcount Ratio
+            </span>
+
+            <span class="span2">
+              Percentage of total population who are multidimensionally poor and deprived in each dimension
+            </span>
+          </div>
+
+          <div class="row me-2 ms-3">
+            <canvas id="myChart3" class="myChart"></canvas>
+          </div>
+
+        </div>
+
+      </div>
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- HIDDEN CONTENT -->
+<!-- <div  class="container-fluid hidden" [style.display]="display">
+
+  <div class="row">
+
+    <div  class="col-lg-12 col-12">
+
+      <div class="row titleDiv">
+        <div class="row align-items-end ms-1">
+
+          <div class="col-lg-8 col-md-6 col-8">
+            <div class="row content">
+              SMI Analysis
+            </div>
+            <div class="row subTitle">
+              A snapshot of multidimensional smart manufacturing growth in India
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="row leftMid ms-2">
+        <div class="heading2">
+          Overview
+        </div>
+        <span class="subTitle">
+          SMI Headcount Ratio, Intensity and MPI
+        </span>
+
+        <div class="row leftMidRow" style="margin-top: 6%;">
+
+          <div class="col-12">
+            <div class="row boxOneNew">
+              <div class="title">
+                Headcount Ratio (H)
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="boxValueNew">
+                25.01%
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12" >
+            <div class="operation">
+              x
+            </div>
+          </div>
+
+          <div class="col-12">
+
+            <div class="row boxTwoNew">
+              <div class="title">
+                Intensity (A)
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="boxValueNew">
+                47.13%
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-12" >
+            <div class="operation">
+              =
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="row boxThreeNew">
+              <div class="title">
+                MPI (HxA)
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="boxValueThreeNew">
+                0.118
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row mt-4 pb-4">
+
+      <div class="html2pdf__page-break"></div>
+
+      <div class="row heading" style="font-size: 1.7rem; width: 70%; margin-left: auto; margin-right: auto; text-align: center; ">
+        <div>
+          Results
+        </div>
+      </div>
+
+
+      <div class="col-lg-12 col-12 topRightDiv">
+        <div class="row greyBox">
+          <span class="span1">
+            SMI: Uncensored Headcount Ratio
+          </span>
+          <span class="span2">
+            Percentage of total population who are deprived in each dimension
+          </span>
+        </div>
+        <div class="row newRow">
+          <canvas id="myChartNew" class="myChartNew"></canvas>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="html2pdf__page-break"></div>
+
+      <div class="row heading" style="font-size: 1.7rem; width: 70%; margin-left: auto; margin-right: auto; text-align: center; ">
+        <div>
+          Results
+        </div>
+      </div>
+
+      <div class="col-lg-12 col-12 topRightDiv">
+
+        <div class="row greyBox">
+          <span class="span1">
+            SMI: Dimension-Wise Contribution to MPI
+          </span>
+
+          <span class="span2">
+            Percentage contribution of each dimension to the MPI score
+          </span>
+        </div>
+
+        <div class="row newRow">
+          <canvas id="myChart2New" class="myChart"></canvas>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+      <div class="html2pdf__page-break"></div>
+
+      <div class="row heading" style="font-size: 1.7rem; width: 70%; margin-left: auto; margin-right: auto; text-align: center; ">
+        <div>
+          Results
+        </div>
+      </div>
+
+      <div class="col-lg-12 col-12 topRightDiv mt-5">
+
+        <div class="row greyBox">
+          <span class="span1">
+            SMI: Censored Headcount Ratio
+          </span>
+
+          <span class="span2">
+            Percentage of total population who are multidimensionally poor and deprived in each dimension
+          </span>
+        </div>
+
+        <div class="row newRow">
+          <canvas id="myChart3New" class="myChart"></canvas>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div> -->

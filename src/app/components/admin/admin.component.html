@@ -1,0 +1,75 @@
+
+
+
+
+<div class="defaultContent" *ngIf="showDefaultContent">
+  <div class="imageRep text-center">
+    <span>
+      <img class="blankImage" src="../../../../assets/loginTrial.PNG" width="100%" alt="">
+    </span>
+
+      <!-- <div class="defaultText">No Models Added...</div> -->
+    <div style="justify-content: center;">
+      <button class="addModel"  data-bs-target="#exampleModalCenter" data-bs-toggle="modal">Add Model</button>
+
+    </div>
+  </div>
+
+<div class="text">
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Model Details</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  [formGroup]="modelForm">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">MODEL NAME</label>
+            <input type="text" formControlName="name"
+             class="form-control" id="exampleFormControlInput1" placeholder="Name" (change)="getModelName($event)" >
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">MODEL DESCRIPTION</label>
+            <textarea type="text" formControlName="description"  class="form-control" id="exampleFormControlInput1" placeholder="Description"  (change)="getModelDesc($event)" ></textarea>
+          </div>
+          <!-- <div class="form-group">
+            <label for="exampleFormControlInput1">IMAGE URL</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Url"  (change)="getModelUrl($event)">
+          </div> -->
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Number of Dimensions</label>
+            <input type="number" formControlName="dimensions"  class="form-control" id="exampleFormControlInput1" placeholder="Dimensions"  (change)="getModelDimensions($event)">
+          </div>
+          <!-- <div class="modalConfirmationText" >Organization has been added!</div> -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-dismiss="modal"  (click)="addModel()" routerLink="/admin" style="background: #003153; border: 1px solid #003153">Add Model </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Merienda+One&family=Merienda:wght@400;700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Rakkas&family=Reggae+One&family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* font-family: 'Amita', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Merienda One', cursive;
+font-family: 'Philosopher', sans-serif;
+font-family: 'Rakkas', cursive;
+font-family: 'Reggae One', cursive;
+font-family: 'Suez One', serif;
+
+
+font-family: 'Lora', serif;
+font-family: 'Merriweather', serif;
+*/
+
+.entirePage{
+  height: 100vh;
+  /* overflow: hidden; */
+  padding: 0;
+  margin: 0;
+}
+
+.entirePage .coverImage{
+  height: 27rem;
+  width: 27rem;
+  position: absolute;
+  right: 10%;
+  bottom: 9.6%;
+}
+
+.entirePage .navbar{
+  overflow: hidden;
+}
+
+.navbar .leftTitle{
+  font-family: 'Rakkas', cursive;
+  font-weight: 400;
+  font-size: 1.8rem;
+  float: left;
+  margin-left: 9%;
+  margin-top: 1.5%;
+}
+
+.navbar .rightContact{
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: .8rem;
+  float: right;
+  margin-right: 2.7%;
+  margin-top: 2.46%;
+}
+
+.navbar .signUpButton{
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: .68rem;
+  color: white;
+
+  background: #003153;
+  border: 5px solid #003153;
+  border-radius: 5px;
+
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
+  padding: .16rem 1.24rem;
+}
+
+.entirePage .mainContent{
+  /* background: orange; */
+  width: 74%;
+  margin-left: 8.6%;
+  margin-top: 12.4%;
+}
+
+.mainContent .mainTitle{
+  /* font-family: 'Philosopher', sans-serif; */
+  font-family: 'Merriweather', serif;
+  font-weight: 600;
+  /* font-style: italic; */
+  font-size: 2.6rem;
+  color: rgba(0, 0, 0, 0.795);
+
+  /* border: 1px solid green; */
+  width: 65%;
+}
+
+.mainContent .tagLine{
+  font-family: 'Merriweather', serif;
+  font-weight: 500;
+  /* font-style: italic; */
+  font-size: 1.04rem;
+  color: black;
+  width: 50%;
+}
+
+.mainContent .takeAssessmentButton{
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  letter-spacing: .25px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.966);
+
+  background: #003153;
+  border: 5px solid #003153;
+  border-radius: 5px;
+
+  /* margin-right: 5%; */
+  margin-top: 3.2%;
+  padding: .16rem 1.24rem;
+
+  cursor: pointer;
+}
+
+.takeAssessmentButton:hover{
+  transform: scale(1.01);
+}
+
+.navbarItems li a:hover{
+  border-bottom: 2.3px solid #003153;
+}
+
+.navbarButton{
+  border: none;
+  background: none;
+  color: rgba(61, 61, 61, 0.849);
+  font-size: .97rem;
+}
+
+.navbarItems li a:hover{
+  border-bottom: 2.3px solid #003153;
+}
+
+
+table.assessmentTable{
+  border: 4.6px solid #003153;
+}
+
+table.assessmentTable thead tr{
+  background: #003153;
+  color: white;
+}
+
+.assessmentTable{
+  padding: 0%;
+}
+
+.assessmentTable tbody{
+  border-top: none;
+}
+.assessmentTable thead th{
+  border-bottom: none;
+}
+
+.assessmentTable tbody td{
+  border: none;
+}
+
+.assessmentTable tbody tr th.blocks{
+  width: 4%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.assessmentTable tbody tr th.blocks span{
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+.assessmentTable tbody td.pillars{
+  background: #c2ecffcc;
+  font-family: 'Vollkorn', serif;
+  font-weight: 800;
+  font-size: 1.08rem;
+  color: #003153;
+  text-align: left;
+  width: 16%;
+  border-left: 2.3px solid #003153;
+  vertical-align: middle;
+  border-bottom: 2.2px dotted #003153;
+}
+
+.assessmentTable tbody td.dimensions{
+  background: #003153;
+  font-family: 'Vollkorn', serif;
+  font-weight: 800;
+  font-size: 1.08rem;
+  color: white;
+  border-bottom: 1px groove #fff;
+  border-top: none;
+  vertical-align: middle;
+  /* text-align: left; */
+}
+
+.assessmentTable tbody td.dimensionDescription{
+  text-align: center;
+  width: 50%;
+  vertical-align: middle;
+  border-bottom: none;
+  padding: 1.4rem;
+}
+
+.assessmentTable tbody td.bandValueDescription{
+  background: rgba(231, 230, 230, 0.733);
+  background: #75baf3da;
+  vertical-align: middle;
+  margin-bottom: 5%;
+  border: none;
+  padding: .76rem;
+  font-weight: 700;
+  color: #003153;
+  /* border-right: 2px solid var(--blue); */
+}
+
+.barChart{
+margin-bottom: 10rem;
+padding-bottom: 10rem;
+/* transform: translateY(-79%) translateX(); */
+transform: translateY(-42%)
+}
+
+.bandValue{
+  text-align: left;
+  transform: translateX(-14%);
+  /* border-left: 2px solid var(--blue); */
+}
+
+.assessmentTable tbody td.bandValueDescription button.dimensionBandValue{
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border: none;
+  border-radius: 100%;
+  padding: 3px 11px;
+
+  font-family: 'Lora', serif;
+  color: rgba(163, 163, 163, 0.973);
+  font-weight: 700;
+}
+
+.assessmentTable tbody td.bandValueDescription button.dimensionBandValue2{
+  margin-left: auto;
+  margin-right: auto;
+  background: #0068bd;
+  color: white;
+  border: none;
+  border-radius: 100%;
+  padding: 3px 11px;
+
+  font-family: 'Lora', serif;
+  font-weight: 700;
+}
+
+/* .assessmentTable tbody td.bandValueDescription button.dimensionBandValue:active{
+  background: #0068bd;
+  color: white;
+} */
+
+/* .assessmentTable tbody td.bandValueDescription button.dimensionBandValue:focus{
+  background: #0068bd;
+  color: white;
+} */
+
+.assessmentTable tbody tr td.valueDescriptionBox{
+  padding: 1rem 1.4rem;
+  max-width: 60%;
+  background: #c2ecffcc;
+  color: #003153;
+}
+
+.assessmentTable tbody tr td span.bandValueSelected{
+  background: #0068bd;
+  border: none;
+  border-radius: 100%;
+  padding: 3px 11px;
+
+  font-family: 'Lora', serif;
+  color: white;
+  font-weight: 700;
+
+  margin-right: 1%;
+}
+
+/* .nextPageBtn{
+  border: 2.3px solid #003153;
+  border-radius: 8px;
+
+  color: #003153;
+  font-weight: 700;
+  font-size: .85rem;
+  padding: .15rem .76rem;
+
+  float: right;
+  margin-top: .7%;
+  margin-right: 5%;
+}
+
+.nextPageBtn:hover{
+  background: #003153;
+  border: 2.3px solid #003153;
+  color: white;
+} */
+
+
+
+#divChart{
+  display: block;
+  width: 60%;
+  height: 70%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myChart{
+
+}

@@ -1,0 +1,98 @@
+<div *ngIf="!contentLoaded">
+  <div class="loader">Loading Models...</div>
+</div>
+
+<div *ngIf="contentLoaded">
+
+
+  <app-navbar></app-navbar>
+
+  <div class="titleDiv mt-3" >
+    <h2 class="text mt-3">Models Available</h2>
+  </div>
+
+  <div class="controlPanel">
+    <div class="controlButtons">
+      <span class="layoutBtn">
+        <i class='bx bx-list-ul' title="List View"></i>
+      </span>
+
+      <span class="sortBtn">
+
+        <i class='bx bx-dots-vertical-rounded'></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row " *ngIf="displayGridView">
+
+      <div class="card modelCard mt-5 ml-4 p-1 " *ngFor="let model of models" style="width: 17rem; align-items:center; border-radius: 15px; border: 3px solid #01192b;" style="width: 20rem;">
+        <div class="modelBox">
+          <div class="" style="
+              border-bottom: 2px solid #003153;
+              padding: 20px 0px;
+              background: #015497;
+            ">
+            <div class="dropdown open" style="position: absolute; right: 5px; top: 15px">
+              <a href="#!" class="px-2" id="triggerId1" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="fa fa-ellipsis-v mr-2" style="color: white; font-size: 1.05rem"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="triggerId1">
+                <a class="dropdown-item" href="#"><i class="bx bx-info-circle mr-1"></i> Info</a>
+                <a class="dropdown-item text-danger" href="#"><i class="fa fa-trash mr-1"></i> Remove
+                  Suggestion</a>
+              </div>
+            </div>
+            <img class="card-img-top modelPic" src="../../../../assets/loginTrial.PNG" alt="Card image" />
+          </div>
+
+        </div>
+
+        <div class="card-body" style="margin-top: -3%">
+          <h5 class="card-title text-center titleCard">
+            {{ model.name }}
+          </h5>
+
+          <div>
+            <p class="card-text text-lg-start">
+              {{ model.description }}
+            </p>
+            <div class="text-center">
+              <a href="#" class="btn justify-content-center useModelButton" routerLinkActive="active"
+                routerLink="/survey" (click)="selectModel(model.name)">Proceed to Survey</a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row" *ngIf="!displayGridView">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">SNo.</th>
+            <th scope="col">Model</th>
+            <th scope="col">Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>1</td>
+            <td>SIRI</td>
+            <td>Desc</td>
+            <!-- <td><button class="useModelButton">Proceed</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

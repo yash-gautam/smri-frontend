@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > div[class*='col-'] {
+ display: flex;
+}
+
+.dimensionCard{
+  background: #003153;
+  margin-left: auto;
+  margin-right: auto;
+}

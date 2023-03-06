@@ -1,0 +1,170 @@
+<app-navbar></app-navbar>
+
+
+ <!-- MODAL CODE -->
+ <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Model Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">MODEL NAME</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" (change)="getModelName($event)" >
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">MODEL DESCRIPTION</label>
+            <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder="Description"  (change)="getModelDesc($event)" ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">IMAGE URL</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Url"  (change)="getModelUrl($event)">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Number of Dimensions</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Dimensions"  (change)="getModelDimensions($event)">
+          </div>
+          <!-- <div class="modalConfirmationText" >Organization has been added!</div> -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"  (click)="addModel()" style="background: #003153; border: 1px solid #003153">Proceed </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Model Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="card text-white mb-3 dimensionCard" style="width: 22rem;" >
+              <div class="card-header">Dimension Details</div>
+
+
+              <div class="card-body p-2 m-1">
+
+                <label for="validationDefault01">Dimension Name</label>
+                <input type="text" class="form-control" id="validationDefault01" placeholder="Name"   required>
+
+
+                <label for="validationDefault01">Description</label>
+                <textarea type="text" class="form-control" id="validationDefault01" placeholder="Description"   required></textarea>
+
+                <label for="validationDefault01">Dimension Weight</label>
+                <input type="number" class="form-control" id="validationDefault01" placeholder="Weight" (change)="getDimensionWeight($event)"  required>
+
+                <label for="validationDefault01">Dimension Cut-Off</label>
+                <input type="number" class="form-control" id="validationDefault01" placeholder="Cut Off" (change)="getDimensionCutoff($event)"  required>
+
+
+                <label for="validationDefaultUsername">Rating </label>
+                <div class="input-group m-1" *ngFor="let j of [1,2,3,4,5]">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend2">{{j}}</span>
+                  </div>
+                  <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" (change)="getDimensionRating(j,$event)" required>
+                </div>
+
+                <a href="#"  class="btn btn-primary mt-2 ml-5 align-center text-center" data-toggle="modal" data-target="#modal" >Add Dimension</a>
+
+              </div>
+          </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"  (click)="addModel()" style="background: #003153; border: 1px solid #003153">Proceed </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="container" *ngIf="show" >
+  <div class="row">
+    <div class="card text-white bg-info mb-3 ml-3" style="width: 22rem; background: #003153" *ngFor="let i of res" >
+      <div class="card-header">Dimension {{i}} Details</div>
+
+
+      <div class="card-body p-2 m-1">
+
+        <label for="validationDefault01">Dimension Name</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="Name" (change)="getDimensionName(i,$event)"  required>
+
+
+        <label for="validationDefault01">Description</label>
+        <textarea type="text" class="form-control" id="validationDefault01" placeholder="Description" (change)="getDimensionDesc(i,$event)"  required></textarea>
+
+        <label for="validationDefault01">Dimension Weight</label>
+        <input type="number" class="form-control" id="validationDefault01" placeholder="Weight" (change)="getDimensionWeight($event)"  required>
+
+        <label for="validationDefault01">Dimension Cut-Off</label>
+        <input type="number" class="form-control" id="validationDefault01" placeholder="Cut Off" (change)="getDimensionCutoff($event)"  required>
+
+
+        <label for="validationDefaultUsername">Rating </label>
+        <div class="input-group m-1" *ngFor="let j of [1,2,3,4,5]">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">{{j}}</span>
+          </div>
+          <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" (change)="getDimensionRating(j,$event)" required>
+        </div>
+
+        <a href="#"  class="btn btn-primary mt-2 align-center" data-toggle="modal" data-target="#modal" (click)="add(i)">Add Dimension</a>
+
+      </div>
+  </div>
+
+
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

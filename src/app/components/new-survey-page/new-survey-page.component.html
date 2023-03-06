@@ -1,0 +1,67 @@
+<app-new-navbar></app-new-navbar>
+
+<div class="container" style="margin-top: 75px;font-family: 'Open Sans', sans-serif;">
+
+  <div class="col">
+    <h1 style="color: red;text-decoration:underline">Surway Assessment</h1>
+    <h4 style="margin-top:45px;font-family: 'Open Sans', sans-serif;margin-bottom:35px;color:#363636">
+      The Surway Assessment is a procedure followed & used by companies to self-evalulate the current progress of their organization in regards to Industry 4.0 adoption & implementation. This assessment provides organizations with a detailed comparative analysis that will allow them to view their strengths & weaknesses along various dimensions considered in the model.
+    </h4>
+
+
+
+
+    <h3 style="margin-top:60px;font-family: 'Open Sans', sans-serif;color:#363636;font-weight:bolder">
+      Please rate the state of your company on the following <span style="color: red">16 dimensions .</span>
+    </h3>
+  </div>
+
+
+  <div class="col" *ngFor="let i of dimension" >
+    <h3 style="margin-top: 35px;color:#6A6969 ;margin-left:0px;font-family: 'Open Sans', sans-serif;font-weight:900">
+      Dimension {{i}}:
+    </h3>
+
+    <h4 style="margin-top: 28px;color:#2E2B2B ;margin-bottom:10px;font-family: 'Open Sans', sans-serif" >{{dimDesc[i-1]}}</h4>
+
+
+     <form style="margin-bottom: 70px;" class="form-check " >
+       <div *ngFor="let j of dimValues[i-1];let k = index" >
+
+        <div style="display: flex;" class="mt-4 radio-green ">
+          <input  type="radio" class="form-check-input "  name="{{dimensions[i-1]}}" value="{{j}}" (change)="btn($event,k,i)"
+            >
+          <label class="options form-check-label ml-3 "  style="font-family: 'Open Sans', sans-serif;font-size:22px;font-weight: bold;"
+             [ngStyle]="{'color': (booleanValue[i-1][k]) ? 'black' : 'black','font-weight':
+             (booleanValue[i-1][k]) ? 'bolder' : '200'}"
+            >{{j}}</label>
+
+        </div>
+       </div>
+      </form>
+
+  </div>
+  <p *ngIf="postDataBoolean" style="color: green;text-align:center">
+    Please Wait ! Data is being posted
+  </p>
+
+  <button type="button text-center p-3" class="btn" style="margin-bottom: 70px;color:white;background-color:#EC1C24;margin-left:34rem;align-items:center;font-size:23px"
+  (click)="post()"
+  >Save and Proceed</button>
+
+
+
+</div>
+
+
+
+<div class="cls" style="position: fixed;bottom:0;left:0;width:100%;height:45px;display: flex;text-align:center">
+  <div class="col1" style="background-color:#EC1C24;" [style.width]="sha" ></div>
+  <div [style.width]="width" style="background-color:#D9D9D9 ; " cls="grey"></div>
+</div>
+
+<div id="abc" class="div container" style="position: fixed;bottom:0;margin-left:43%;margin-bottom:10px;font-family: 'Open Sans', sans-serif;">
+  {{len}} OUT of 16 ANSWERED
+</div>
+
+

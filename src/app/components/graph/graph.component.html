@@ -1,0 +1,60 @@
+
+
+
+
+<div class="assessmentPage">
+  <table class="table table mt-5 assessmentTable" style="width: 90%; margin: auto;text-align: center;">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col" >Dimension Title </th>
+        <th scope="col" >Dimension Result </th>
+        <th scope="col" class="bandValue">0</th>
+        <th scope="col" class="bandValue">1</th>
+        <th scope="col" class="bandValue">2</th>
+        <th scope="col" class="bandValue">3</th>
+        <th scope="col" class="bandValue">4</th>
+        <th scope="col" class="bandValue">5</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let item of results;let index=index">
+      <tr>
+        <th class="blocks" rowspan="9" ><span> Dimension {{index}}</span></th>
+        <td class="pillars" rowspan="3">{{item.Dim}}</td>
+        <td class="dimensions" rowspan="3">{{item.value}}</td>
+        <td colspan="6" class="dimensionDescription" ></td>
+      </tr>
+      <tr class="barChart" data-toggle="popover" data-trigger="hover" title="Dimension: {{item.Dim}} Weight:{{item.value}}"  data-content="Popover in row number 1">
+        <td [attr.colspan]="item.value" class="bandValueDescription">
+            {{item.value}}
+        </td>
+      </tr>
+      <tr>
+      </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </table>
+
+</div>
+
+
+
+

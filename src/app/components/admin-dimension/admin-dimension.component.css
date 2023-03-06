@@ -1,0 +1,167 @@
+.titleArea{
+    /* background: red; */
+    margin-top: 1%;
+  }
+
+  .titleArea .addDimension{
+    font-size: .83rem;
+    float: right;
+  }
+
+  .titleArea .title{
+    /* background: red; */
+    text-align: center;
+    font-family: 'Suez One', serif;
+    font-size: 1.7rem;
+    color: #003153;
+  }
+
+  .titleArea .instructions{
+    width: 94%;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #003153;
+  }
+
+
+  .dimensionTable{
+    font-size: 1rem;
+  }
+
+  table.dimensionTable thead{
+    font-size: 1rem;
+  }
+
+  .dimensionTable thead th{
+    border-bottom: 2px solid black;
+  }
+
+  .dimensionTable thead td{
+    border-bottom: 2px solid black;
+  }
+
+  .dimensionTable thead th:nth-last-child(1){
+    border-bottom: 1px solid black;
+  }
+
+  .tableHeading{
+    vertical-align: middle;
+    text-align: center;
+    height: 1%;
+    font-size: .94rem;
+  }
+
+  .dimensionTable thead td{
+    text-align: center;
+    font-weight: 700;
+    font-size: .87rem;
+  }
+
+  .dimensionTable tbody{
+    font-size: .8rem;
+  }
+
+  .dimensionTable tbody td{
+    display: table-cell;
+    height: 20px;
+    overflow: hidden;
+  }
+
+  .dimensionTable tbody tr:nth-child(odd){
+    background: #eaf6fabe;
+  }
+
+  .adminPageInput{
+    background: none;
+  }
+
+  .image{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: auto;
+  }
+
+   .blankImage{
+    opacity: 0.66;
+  }
+
+  .defaultText{
+    margin-top: 1%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 6.8%;
+    margin-left: 2%;
+    color: rgba(0, 0, 0, 0.849);
+    font-family: 'Philosopher', sans-serif;
+  }
+
+  .defaultContent{
+    /* background: red; */
+  }
+
+  .imageRep{
+    width: 20%;
+    margin-top: 10%;
+    /* top:25%; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row > div[class*='col-'] {
+   display: flex;
+  }
+
+  .dimensionCard{
+    background: #003153;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .adminPageInput{
+    border: none;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .addModel{
+    padding: 4px 9px;
+    border-radius: 4px;
+    font-size: .95rem;
+    background: #003153;
+    color: white;
+    margin-left: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    /* transform: translateX(567%) translateY(-360%); */
+  }
+
+  .addDimension{
+    padding: 4px 9px;
+    border-radius: 4px;
+    font-size: .95rem;
+    background: #003153;
+    color: white;
+    margin-left: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .visitedCompaniesList{
+    float: right;
+  }

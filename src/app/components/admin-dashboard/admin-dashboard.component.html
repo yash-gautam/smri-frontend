@@ -1,0 +1,297 @@
+<input type="checkbox" id="nav-toggle">
+
+
+
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <h2><span class="fas fa-compact-disc appTitle"></span><span class="appTitle">Surway</span></h2>
+  </div>
+
+  <div class="sidebar-menu">
+    <ul>
+      <li>
+        <a href="" class="active"><span class="las la-igloo sidebarIcon" style="font-size: 1.4rem;"></span>
+          <span class="sidebarTitle">Home</span></a>
+      </li>
+      <li>
+        <a href=""><span class="las la-clipboard-list" style="font-size: 1.4rem;"></span>
+          <span class="sidebarTitle">Tasks</span></a>
+      </li>
+      <li>
+        <a href=""><span class="las la-users" style="font-size: 1.4rem;"></span>
+          <span class="sidebarTitle">Analysis</span></a>
+      </li>
+      <li>
+        <a href=""><span class="las la-database" style="font-size: 1.4rem;"></span>
+          <span class="sidebarTitle">Models</span></a>
+      </li>
+      <li>
+        <a href=""><span class="las la-cog" style="font-size: 1.4rem;"></span>
+          <span class="sidebarTitle">Settings</span></a>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="main-content">
+  <header>
+    <h3 class="navbarTitle">
+      <label for="nav-toggle">
+        <span class="las la-bars"></span>
+      </label>
+      <!-- Admin -->
+    </h3>
+
+    <!-- <div class="search-wrapper">
+      <span class="las la-search"></span>
+      <input type="search" placeholder="Search here..." />
+    </div> -->
+
+    <div class="user-wrapper">
+      <img src="../../../../assets/user.png" width="30px" height="30px" alt="user icon">
+      <div>
+        <h4 class="adminName">Yash Gautam</h4>
+        <small>Admin</small>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="controls">
+
+      <div *ngIf="!isExpanded">
+        <i class='bx bxs-chevrons-down'></i>
+      <button class="expandButton" (click)="expandModelList()">Expand List</button>
+      </div>
+
+      <div *ngIf="isExpanded">
+        <i class='bx bxs-chevrons-up'></i>
+      <button class="expandButton" (click)="expandModelList()">Collapse List</button>
+      </div>
+
+    </div>
+
+    <div class="cards mt-5">
+      <!-- *ngFor="let item of modelArray" -->
+
+        <div class="card-single" *ngFor="let item of models; let index=index;" routerLink="/adminDimension" >
+          <div  (click)="sendmodel(item)" >
+            <h1>{{item.name}}</h1>
+            <span>{{dim[item.name]}}  Dimensions</span>
+          </div>
+          <div>
+            <span><img src="../../../../assets/loginTrial.PNG" width="" alt=""></span>
+            <!-- <span class="las la-users"></span> -->
+          </div>
+        </div>
+
+
+        <div class="card-single" routerLink="/addModel" >
+          <div   >
+
+            <span class="la la-pencil-square"></span>
+            <h2 style="color: white;">Create Modal   </h2>
+
+          </div>
+          <div>
+            <span><img src="../../../../assets/loginTrial.PNG" width="" alt=""></span>
+            <!-- <span class="las la-users"></span> -->
+          </div>
+        </div>
+
+      <!-- <ngx-slick-carousel class="carousel"
+          #slickModal="slick-carousel"
+          [config]="slideConfig"
+          (init)="slickInit($event)"
+          (breakpoint)="breakpoint($event)"
+          (afterChange)="afterChange($event)"
+          (beforeChange)="beforeChange($event)">
+
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <img src="{{ slide.img }}" alt="" width="100%">
+          </div>
+      </ngx-slick-carousel> -->
+
+    </div>
+
+
+
+    <div class="recent-grid">
+
+      <div class="projects">
+        <div class="card" style="border-radius: 10px;">
+          <div class="card-header" style="border-radius: 10px;">
+            <h4 class="headingFont">Model Analysis</h4>
+
+            <button>See all <span class="las la-arrow-right"></span></button>
+          </div>
+
+          <div class="card-body">
+
+            <div id="divChart">
+
+              <canvas id="myChart"></canvas>
+
+            </div>
+            <div class="statistics1">
+              <h3 class="statisticTitle">Most Used Model: <span class="mostUsedModel">Surway</span> </h3>
+              <span class="incStat"><i class='bx bxs-upvote' style="font-size: .85rem;"></i> 15% since last month</span>
+            </div>
+            <div class="statistics2">
+              <h3 class="statisticTitle">Least Used Model: <span class="leastUsedModel">Impuls</span> </h3>
+              <span class="decStat"><i class='bx bxs-downvote' style="font-size: .85rem;"></i> 9% since last month</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="companies">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="headingFont">Surveyed Companies</h4>
+            <button>See all <span class="las la-arrow-right"></span></button>
+          </div>
+
+          <div class="card-body">
+            <div class="company" *ngFor="let item of companies ">
+              <div class="info">
+                <img src="../../../../assets/loginTrial.PNG" width="40px" height="40px" alt="profile icon">
+                <div>
+                  <h4>{{item.Organisations}}</h4>
+                  <small>{{item.Sector}}</small>
+                </div>
+              </div>
+              <div class="contact">
+                <span class="las la-user-circle"></span>
+                <span class="las la-comment"></span>
+                <span class="las la-phone"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="recent-grid2 mt-4">
+      <div class="projects">
+        <div class="card" style="border-radius: 10px;">
+          <div class="card-header" style="border-radius: 10px;">
+            <h3>Recent Applications</h3>
+
+            <button *ngIf="!viewAllRecentAppIsClicked" (click)="viewAllRecentApplications()">See all <span class="las la-arrow-right"></span></button>
+            <button *ngIf="viewAllRecentAppIsClicked" (click)="viewAllRecentApplications()">Minimize <span class="las la-minus"></span></button>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table width="100%">
+                <thead>
+                  <tr>
+                    <td>Company</td>
+                    <td>Industry</td>
+                    <td>Model</td>
+                    <td>Status</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of recentApplicationArray | slice:0:limitRecentApplicationRows">
+                    <td>Hero</td>
+                    <td>Manufacturing</td>
+                    <td>SIRI</td>
+                    <td>
+                      <span class="status purple"></span>
+                      completed
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tata</td>
+                    <td>Manufacturing</td>
+                    <td>Impuls</td>
+                    <td>
+                      <span class="status pink"></span>
+                      in progress
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>BMU</td>
+                    <td>Automotive</td>
+                    <td>SIRI</td>
+                    <td>
+                      <span class="status orange"></span>
+                      pending
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle" style="text-align: center;">Model Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">MODEL NAME</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" (change)="getModelName($event)" >
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">MODEL DESCRIPTION</label>
+            <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder="Description"  (change)="getModelDesc($event)" ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">IMAGE URL</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Url"  (change)="getModelUrl($event)">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Number of Dimensions</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Dimensions"  (change)="getModelDimensions($event)">
+          </div>
+          <!-- <div class="modalConfirmationText" >Organization has been added!</div> -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"  (click)="addModel()" style="background: #003153; border: 1px solid #003153">Proceed </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,181 @@
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+  <!-- Navbar -->
+
+
+
+  <div *ngFor="let company of organizationsArray; let i=index;">
+    <div class="accordion"  (click)="displayTableForCompany(i)">
+      <span>{{i+1}}. {{company}}</span>
+      <span class="dropDownIcon">
+        <i class='bx bx-chevron-down'></i>
+      </span>
+    </div>
+
+    <table class="table table mt-1 assessmentTable" style="width: 90%; margin-left: auto; margin-right: auto; text-align: center;"
+    *ngIf="booleanArray[i]">
+      <thead>
+        <tr>
+          <th></th>
+          <th scope="col" colspan="2">DIMENSION</th>
+          <th scope="col">0</th>
+          <th scope="col">1</th>
+          <th scope="col">2</th>
+          <th scope="col">3</th>
+          <th scope="col">4</th>
+          <th scope="col">5</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let dimension of dimensionsArray; let dimNo=index">
+        <tr>
+          <th class="blocks" rowspan="9" ><span>{{company}}</span></th>
+          <td class="pillars" rowspan="3">{{dimension}}</td>
+          <td class="dimensions" rowspan="3">{{dimensionsWeightArray[dimNo]}}</td>
+          <td colspan="6" class="dimensionDescription" ><span>Vertical Integration is the integration of processes and systems across all hierarchical levels of the automation pyramid within a facility to establish a connected, end-to-end data thread.</span></td>
+        </tr>
+        <tr >
+          <td colspan="6" class="bandValueDescription">
+            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group" style="width: 100%;">
+              <span *ngIf="ngifShowTick(company, dimension)" class="mt-1"><i style="font-size: 1.36rem; font-weight: 700; color: rgb(11, 175, 33);" class='bx bx-check'></i></span>
+              <button class="dimensionBandValue" *ngFor="let i of rating" (click)="getBandRating(company, dimension, i)">
+                {{ i }}
+              </button>
+            </div>
+           </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6" *ngIf="ngifMethod(company, dimension)" class="valueDescriptionBox">
+            <span class="bandValueSelected">{{bandValueSelected}}</span>
+              Band Level Selected
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <table class="table table mt-5 assessmentTable" style="width: 90%; margin: auto;text-align: center;"
+  >
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col" colspan="2">BAND</th>
+        <th scope="col">0</th>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+        <th scope="col">3</th>
+        <th scope="col">4</th>
+        <th scope="col">5</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let item of dimensionsArray">
+      <tr>
+        <th class="blocks" rowspan="9" ><span>'Company Name'</span></th>
+        <td class="pillars" rowspan="3">'Dimension Title'</td>
+        <td class="dimensions" rowspan="3">'Dimension Weight'</td>
+        <td colspan="6" class="dimensionDescription" ><span>Vertical Integration is the integration of processes and systems across all hierarchical levels of the automation pyramid within a facility to establish a connected, end-to-end data thread.</span></td>
+      </tr>
+      <tr >
+        <td colspan="6" class="bandValueDescription">
+          <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group me-2" role="group" aria-label="First group" style="width: 100%;">
+            <button class="dimensionBandValue" *ngFor="let i of rating">
+              {{ i }}
+            </button>
+          </div>
+         </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="6" class="valueDescriptionBox">
+          <span class="bandValueSelected">1</span>
+            Band Level Selected
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <!-- <div *ngFor="let company of allCompanyTable; let i=index">
+    <div *ngIf="showParticularTable">
+      <table class="table table mt-5 assessmentTable" style="width: 90%; margin: auto;text-align: center;"
+    >
+      <thead>
+        <tr>
+          <th></th>
+          <th scope="col" colspan="2">BAND</th>
+          <th scope="col">0</th>
+          <th scope="col">1</th>
+          <th scope="col">2</th>
+          <th scope="col">3</th>
+          <th scope="col">4</th>
+          <th scope="col">5</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let item of dimensionsArray">
+        <tr>
+          <th class="blocks" rowspan="9" ><span>'Company Name'</span></th>
+          <td class="pillars" rowspan="3">'Dimension Title'</td>
+          <td class="dimensions" rowspan="3">'Dimension Weight'</td>
+          <td colspan="6" class="dimensionDescription" ><span>Vertical Integration is the integration of processes and systems across all hierarchical levels of the automation pyramid within a facility to establish a connected, end-to-end data thread.</span></td>
+        </tr>
+        <tr >
+          <td colspan="6" class="bandValueDescription">
+            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group" style="width: 100%;">
+              <button class="dimensionBandValue" *ngFor="let i of rating">
+                {{ i }}
+              </button>
+            </div>
+           </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="6" class="valueDescriptionBox">
+            <span class="bandValueSelected">1</span>
+              Band Level Selected
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div> -->
+
+  <!-- <button style="float: right; position: absolute; right: 5%; bottom: 1%;" (click)="nextTable()">Next</button> -->
+
+  <!-- <button (click)="test()">get</button> <br><br> -->
+
+  <!-- <button (click)="testSend('yeet')">send</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

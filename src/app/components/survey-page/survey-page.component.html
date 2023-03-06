@@ -1,0 +1,100 @@
+<div *ngIf="!contentLoaded">
+  <div class="loader">Loading Survey...</div>
+</div>
+
+
+<div *ngIf="contentLoaded">
+  <app-navbar></app-navbar>
+
+
+
+  <section class="home" id="home">
+
+    <div class="content">
+
+
+        <span>Surway Assessment</span>
+        <!-- <h3>The next step...</h3> -->
+        <p>The Surway Assessment is a procedure followed & used by companies to self-evalulate the current progress of their organization in regards to Industry 4.0 adoption & implementation. This assessment provides organizations with a detailed comparative analysis that will allow them to view their strengths & weaknesses along various dimensions considered in the model.</p>
+        <br>
+        <div><app-excel-upload></app-excel-upload></div>
+
+      </div>
+
+  </section>
+
+
+
+
+<div class="container" style="margin-left: auto;margin-right:auto ;">
+<div class="row">
+  <div class="assessmentPage">
+    <table *ngIf="displayTable" class="table table mt-4 assessmentTable" style="width: 100%; margin: auto;text-align: center;">
+      <thead>
+        <tr>
+          <th></th>
+          <th scope="col" colspan="2">BAND</th>
+          <th scope="col">0</th>
+          <th scope="col">1</th>
+          <th scope="col">2</th>
+          <th scope="col">3</th>
+          <th scope="col">4</th>
+          <th scope="col">5</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let i of dim ;let index = index">
+        <tr>
+          <th class="blocks" rowspan="9" ><span>Dimension {{index}} </span></th>
+          <td class="pillars" rowspan="3">{{i.name}}</td>
+          <td class="dimensions" rowspan="3">{{i.weight}}</td>
+          <td colspan="6" class="dimensionDescription" ><span>{{i.description}}</span></td>
+        </tr>
+        <tr>
+          <td colspan="6" class="bandValueDescription">
+            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group" style="width: 100%;">
+              <button class="dimensionBandValue " *ngFor="let j of rating" (click)="getRate(i.name,j, index)">
+                {{ j }}
+              </button>
+
+            </div>
+          </div>
+          </td>
+        </tr>
+        <tr >
+          <td colspan="6"  class="valueDescriptionBox"  *ngIf="showDescriptionBox(index,i.name)" >
+            <span>{{i.Rating[rate]}}</span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+
+
+
+<div class="container warning">
+  <h2 class="warningText">Please view survey in Landscape View!</h2>
+</div>
+
+
+
+
+
+
+    <div class="text-center"  >
+      <button type="button" [disabled]="responsesNotSaved" class="button btn ml-5 mt-5 mb-3"  style="background-color: #003153;color:white; text-transform: uppercase;" routerLink="/analysis" >Confirm and View Analyis</button>
+
+      <button type="button" [disabled]="saveButtonEnabled" *ngIf="showBut" class="saveButton btn ml-5 mt-5 mb-3"  style="color:white; text-transform: uppercase;"  (click)="post()">Save Responses</button>
+    </div>
+
+    <div class="text-center"  >
+      <!-- <button type="button" class="saveButton btn ml-5 mt-5 mb-3"  style="background-color: #003153;color:white; text-transform: uppercase;"  (click)="post()">Save Responses</button> -->
+    </div>
+
+
+</div>

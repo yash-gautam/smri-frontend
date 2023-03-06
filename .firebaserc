@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "angular-1c9e2"
+  },
+  "targets": {
+    "angular-1c9e2": {
+      "hosting": {
+        "weightedSurvey": [
+          "angular-1c9e2"
+        ]
+      }
+    }
+  }
+}

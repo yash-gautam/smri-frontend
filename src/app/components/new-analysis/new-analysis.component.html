@@ -1,0 +1,227 @@
+<app-new-navbar></app-new-navbar>
+
+<div class="container-fluid">
+
+  <!-- BLUE BOX -->
+  <div class="row analysisHeading">
+    <div class="col">
+      <span><h1 style="font-weight: 600;">SMRI Analysis</h1></span>
+      <span><h1>A snapshot of multidimensional smart manufacturing growth in India</h1></span>
+    </div>
+  </div>
+
+  <!-- BLACK BOX -->
+  <div class="row downloadBox">
+    <div class="col">
+      <button class="pdfBtn">
+        <span>Download</span>
+        &nbsp; &nbsp;
+        <span><img src="../../../../assets/pdf_iconNew.png" class="pdfImage" alt=""></span>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- OVERVIEW SECTION -->
+  <div class="row overviewBox">
+
+    <div class="col">
+      <div class="row">
+        <span class="overviewHeading">Overview</span>
+        <br>
+        <span class="overviewSubHeading">SMRI Headcount Ratio, Intensity and MPI</span>
+      </div>
+
+      <div class="row cardRow mt-4">
+
+        <!-- HEADCOUNT RATIO CARD -->
+        <div class="col-3 operandCard">
+          <div class="row cardHead">
+            <div class="col">Headcount Ratio (H)</div>
+          </div>
+          <div class="row cardBody">
+            <div class="col">42.42 %</div>
+          </div>
+        </div>
+
+        <div class="col-1 operatorCard my-auto">
+          x
+        </div>
+
+        <!-- INTENSITY CARD -->
+        <div class="col-3 operandCard">
+          <div class="row cardHead">
+            <div class="col">Intensity (A)</div>
+          </div>
+          <div class="row cardBody">
+            <div class="col">59.33 %</div>
+          </div>
+        </div>
+
+        <div class="col-1 operatorCard my-auto">
+          =
+        </div>
+
+        <!-- ADJUSTED HEADCOUNT RATIO CARD -->
+        <div class="col-3 resultCard">
+          <div class="row cardHead">
+            <div class="col">MPI (HxA)</div>
+          </div>
+          <div class="row cardBody">
+            <div class="col">0.25</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GRAPH SECTION -->
+  <div class="graphArea">
+
+    <div class="row graphBox">
+      <div class="col">
+        <div class="row">
+          <span class="graphHeading">Results</span>
+        </div>
+
+        <!-- GRAPH 1 -->
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="bodyTitle">
+                  <span class="heading">Average score of all organisations that participated in the survey for each dimension vs. your own</span>
+                  <br>
+                  <!-- <span class="subHeading">Comparison of individual companies' results with the benchmark results</span> -->
+                </div>
+                <div class="bodyGraph">
+                  <canvas id="averageScoreChart" class="myChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- GRAPH 1 -->
+         <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="bodyTitle">
+                  <span class="heading">
+                    Percentage of companies with a low SMRI score in each dimension.
+                  </span>
+                  <br>
+                  <!-- <span class="subHeading">Comparison of individual companies' results with the benchmark results</span> -->
+                </div>
+                <div class="bodyGraph">
+                  <canvas id="uncensoredHeadcountChart" class="myChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRAPH 1 -->
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="bodyTitle">
+                  <span class="heading">
+                    Percentage of companies with low multidimensional SMRI scores and scoring less in each dimension
+                  </span>
+                  <br>
+                  <!-- <span class="subHeading">Comparison of individual companies' results with the benchmark results</span> -->
+                </div>
+                <div class="bodyGraph">
+                  <canvas id="censoredHeadcountChart" class="myChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRAPH 2 -->
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="bodyTitle">
+                  <span class="heading">
+                    Contribution of each dimension to poor SMRI score among the companies that took part in the survey
+                  </span>
+                  <br>
+                  <!-- <span class="subHeading">Rank of top 10 companies with the best progress in the analysis</span> -->
+                </div>
+                <div class="bodyGraph">
+                  <canvas id="dimensionContributionChart" class="myChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- RANK TABLE -->
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="bodyTitle mb-4">
+                  <span class="heading">
+                    Ranking of companies according to their readiness for smart manufacturing
+                  </span>
+                  <br>
+                  <!-- <span class="subHeading">Rank of top 10 companies with the best progress in the analysis</span> -->
+                </div>
+
+                  <div class="rankTable">
+                    <table class="table w-75 text-center me-auto ms-auto">
+                      <thead class="thead-light">
+                        <tr>
+                          <th scope="col">Rank</th>
+                          <th scope="col">Company</th>
+                          <th scope="col">Score</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of topCompanyArray; let value of topCompanyResultArray; let idx=index">
+                          <th scope="row">{{idx+1}}</th>
+                          <td>{{item}}</td>
+                          <td>{{value}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- GRAPH 3 -->
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="bodyTitle">
+                  <span class="heading">Dimension Progression Chart</span>
+                  <br>
+                  <span class="subHeading">Company-by-company progression in the 3 Pillars: Process, Technology and Organisation.</span>
+                </div>
+                <div class="bodyGraph">
+                  <canvas id="dimensionProgressionChart" class="myChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
